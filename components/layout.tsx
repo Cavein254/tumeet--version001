@@ -9,11 +9,11 @@ export default function Layout({ children }: { children: ReactNode }) {
   const loading = status === "loading";
 
   return (
-    <>
+    <div className="w-screen">
       <Header1 />
       <Header />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
