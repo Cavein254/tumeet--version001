@@ -1,4 +1,5 @@
 import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 import { useState } from "react";
 
 import Profile from "./header/Profile";
@@ -28,7 +29,7 @@ function Header1() {
               <span>sun</span>
             </div>
 
-            <div className="">{showDrop && <Profile />}</div>
+            {showDrop && <Profile />}
             {!session ? (
               <div>
                 <button className="btn bg-white text-black font-normal dark:bg-black dark:text-white dark:outline-1 dark:outline-white outline-1 ">
@@ -44,11 +45,14 @@ function Header1() {
                 </button>
               </div>
             ) : (
-              <div>
-                <button className="bt" onClick={handleShowDrop}>
-                  Drop
-                </button>
-              </div>
+              <button onClick={handleShowDrop}>
+                <Image
+                  className="rounded-full"
+                  src={session?.user?.image}
+                  height={50}
+                  width={50}
+                />
+              </button>
             )}
           </div>
         </div>
