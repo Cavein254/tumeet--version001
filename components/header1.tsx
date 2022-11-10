@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Profile from "./header/Profile";
 function Header1() {
   const [showDrop, setShowDrop] = useState(false);
   const handleShowDrop = () => {
@@ -10,20 +11,27 @@ function Header1() {
         <div>Tailwind Components</div>
         <div className=" flex-grow">
           <div className="flex flex-row justify-evenly invisible md:visible">
-            <li>Component</li>
-            <li>Premium</li>
-            <li>Tools</li>
-            <li>Custom Development</li>
+            <h4>Component</h4>
+            <h4>Premium</h4>
+            <h4>Tools</h4>
+            <h4>Custom Development</h4>
           </div>
         </div>
-        <div className="flex flex-row justify-between">
-          <span>sun</span>
-          <button className="bt" onClick={handleShowDrop}>
-            Drop
-          </button>
-          <button className="btn bg-white text-black font-normal dark:bg-black dark:text-white dark:outline-1 dark:outline-white outline-1 ">
-            Login
-          </button>
+        <div className="flex">
+          <div>
+            <span>sun</span>
+          </div>
+          <div>
+            <button className="bt" onClick={handleShowDrop}>
+              Drop
+            </button>
+          </div>
+          {showDrop && <Profile />}
+          <div>
+            <button className="btn bg-white text-black font-normal dark:bg-black dark:text-white dark:outline-1 dark:outline-white outline-1 ">
+              Login
+            </button>
+          </div>
         </div>
       </div>
     </div>
