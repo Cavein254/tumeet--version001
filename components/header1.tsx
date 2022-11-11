@@ -1,6 +1,7 @@
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useState } from "react";
+import ThemeToggler from "../components/header/ThemeToggler";
 
 import Profile from "./header/Profile";
 function Header1() {
@@ -14,7 +15,7 @@ function Header1() {
   return (
     <div className="max-w-screen h-24 min-w-min">
       <div className=" flex-wrap max-w-screen dark:bg-gray-700 dark:text-white py-4  gray-400 shadow-xl border-b-4 border-emerald-500 px-4">
-        <div className="flex flex-row justify-evenly">
+        <div className="flex flex-row justify-evenly items-center">
           <div>Tailwind Components</div>
           <div className=" flex-grow">
             <div className="flex flex-row justify-evenly invisible md:visible">
@@ -24,9 +25,9 @@ function Header1() {
               <h4>Custom Development</h4>
             </div>
           </div>
-          <div className="flex">
+          <div className="flex flex-wrap">
             <div>
-              <span>sun</span>
+              <ThemeToggler />
             </div>
 
             {showDrop && <Profile />}
