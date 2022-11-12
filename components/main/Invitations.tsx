@@ -2,7 +2,7 @@ import Invitation from "./Invitation";
 
 function Invitations() {
   return (
-    <>
+    <div className="">
       <Invitation />;
       <Invitation />;
       <Invitation />;
@@ -12,7 +12,7 @@ function Invitations() {
       <Invitation />;
       <Invitation />;
       <Invitation />;
-    </>
+    </div>
   );
 }
 

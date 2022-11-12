@@ -1,4 +1,4 @@
-import Profile from "../header/Profile";
+import ImageProfile from "../header/ImageProfile";
 
 function Invitation() {
   return (
@@ -6,7 +6,7 @@ function Invitation() {
       <div>
         <div className="flex flex-row justify-between p-2 border-b-2 border-gray-300 items-center">
           <div>
-            <Profile />
+            <ImageProfile />
           </div>
           <div>
             <div>
