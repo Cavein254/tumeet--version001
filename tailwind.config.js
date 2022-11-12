@@ -7,7 +7,11 @@ module.exports = {
   ],
   theme: {
     typography: (theme) => ({}),
-    extend: {},
+    extend: {
+      backgroundImage: {
+        my_bg_image: "url('../public/bg.png')",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
