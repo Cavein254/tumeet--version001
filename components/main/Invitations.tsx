@@ -1,5 +1,19 @@
+import Invitation from "./Invitation";
+
 function Invitations() {
-  return <div></div>;
+  return (
+    <>
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+      <Invitation />;
+    </>
+  );
 }
 
 export default Invitations;

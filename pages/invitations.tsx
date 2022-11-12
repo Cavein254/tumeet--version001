@@ -1,7 +1,11 @@
-import React from "react";
-
+import Layout from "../components/layout";
+import Invitations from "../components/main/Invitations";
 function invitations() {
-  return <div></div>;
+  return (
+    <Layout>
+      <Invitations />
+    </Layout>
+  );
 }
 
 export default invitations;
