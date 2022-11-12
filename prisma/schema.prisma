@@ -50,6 +50,7 @@ model User {
 
 model Profile {
   id String @id @default(cuid())
+  slug String @unique
   profession String?
   bio String?
   languages String?
@@ -70,6 +71,7 @@ model VerificationToken {
 
 model Invitation {
   id String @id @default(cuid())
+  slug String @unique
   title String 
   description String
   invite_url String
@@ -83,6 +85,7 @@ model Invitation {
 
 model Comment {
   id String @id @default(cuid())
+  slug String @unique
   body String
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
