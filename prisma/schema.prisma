@@ -44,6 +44,20 @@ model User {
   accounts      Account[]
   sessions      Session[]
   invitations   Invitation[]
+  comments Comment[]
+  profile  Profile?
+}
+
+model Profile {
+  id String @id @default(cuid())
+  profession String?
+  bio String?
+  languages String?
+  github_url String?
+  twitter_url String?
+  facebook_url String?
+  author   User @relation(fields: [authorId], references: [id])
+  authorId String @unique
 }
 
 model VerificationToken {
@@ -58,10 +72,20 @@ model Invitation {
   id String @id @default(cuid())
   title String 
   description String
+  invite_url String
   published        Boolean?           @default(false)
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
   deadline  DateTime
+  author   User @relation(fields: [authorId], references: [id])
+  authorId String 
+}
+
+model Comment {
+  id String @id @default(cuid())
+  body String
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
   author   User @relation(fields: [authorId], references: [id])
   authorId String 
 }
