@@ -5,7 +5,7 @@ function Profile() {
   return (
     <div>
       <div className="bg-scroll bg-my_bg_image h-36 my-clip-path"></div>
-      <div className="px-4 -mt-12">
+      <div className="px-4 -mt-20">
         <div>
           <div className="md:flex md:flex-row md:justify-between items-center relative justify-center m-2">
             <div className="md:flex md:flex-row items-center">
@@ -68,8 +68,8 @@ function Profile() {
             {/* Another padding  */}
             <div className="md:w-1/2 p-2 bg-blue-50 rounded-md">
               <div className="border-2 border-b-gray-200  border-blue-50">
-                <h3 className="text-lg font-semibold">Skills</h3>
-                <div>
+                <div className="border-2 border-b-gray-200  border-blue-50 pb-4">
+                  <h3 className="text-lg font-semibold">Skills</h3>
                   <div>
                     <span className="border-2 px-2 py-1 mr-2 border-black font-bold rounded-lg">
                       Photoshop
@@ -78,6 +78,8 @@ function Profile() {
                       Instagram
                     </span>
                   </div>
+                </div>
+                <div>
                   <div className="border-2 border-b-gray-200  border-blue-50">
                     <h3 className="text-lg ">Location</h3>
                     <span className="font-semibold">Nikaragwa, Spain</span>
@@ -104,13 +106,17 @@ function Profile() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-row items-center pt-2">
-                    <button className="btn border-2 border-black font-bold mr-2 px-12 bg-white">
-                      Add To List
-                    </button>
-                    <button className="btn bg-black text-white font-bold px-12">
-                      Message
-                    </button>
+                  <div className="flex flex-col md:flex-row items-center pt-2 w-max justify-center">
+                    <div className="items-center">
+                      <button className="btn border-2 border-black font-bold mr-2 bg-white mb-2">
+                        Add To List
+                      </button>
+                    </div>
+                    <div className="items-center">
+                      <button className="btn bg-black text-white font-bold px-12">
+                        Message
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
