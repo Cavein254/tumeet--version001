@@ -36,9 +36,10 @@ function Header1() {
           <div className=" flex-grow">
             <div className="flex flex-row justify-evenly invisible md:visible">
               <Link href="/invitations">Invitations</Link>
-              <h4>Premium</h4>
+              <Link href="/profile">
+                <h4>Profile</h4>
+              </Link>
               <h4>Tools</h4>
-              <h4>Custom Development</h4>
             </div>
           </div>
           <div className="flex flex-wrap">
