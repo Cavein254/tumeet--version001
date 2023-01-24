@@ -1,10 +1,11 @@
 import CreateInvite from "../components/CreateInvite";
+import Layout from "../components/layout";
 
 function createinvite() {
   return (
-    <div>
+    <Layout>
       <CreateInvite />
-    </div>
+    </Layout>
   );
 }
 
