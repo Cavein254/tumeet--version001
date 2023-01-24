@@ -22,7 +22,7 @@ function Profile() {
                 </div>
                 <div className="font-light mb-2 md:mb-0">
                   <h4 className="dark:text-green-400">
-                    A Product Designer From Wembly
+                    <input type="text" placeholder="Enter  you tagline" />
                   </h4>
                 </div>
               </div>
