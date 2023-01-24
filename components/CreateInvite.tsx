@@ -1,5 +1,5 @@
 import "flatpickr/dist/themes/material_green.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Flatpickr from "react-flatpickr";
 import ImageProfile from "./header/ImageProfile";
@@ -9,16 +9,18 @@ function CreateInvite() {
   const initialState = {
     title: "",
     description: "",
-    deadline: date,
+    deadline: "",
     inviteUrl: "",
   };
   const [data, setData] = useState(initialState);
-  let remaining_time = initialState.deadline - date;
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: [e.target.value] });
   };
-  useEffect(() => {}, [date]);
+  const handleDate = (date) => {
+    setData({ ...data, deadline: date });
+  };
   console.log(data);
+
   return (
     <div className="mx-12 overflow-hidden">
       <div className="m2 p-2 shadow-2xl border-2 rounded-lg border-b-2 border-emerald-300 hover:shadow-2xl hover:shadow-gray-500 dark:bg-gray-800 dark:hover:shadow-emerald-500">
@@ -74,7 +76,7 @@ function CreateInvite() {
               <div className="font-bold">
                 Enter the date and time of the meet
               </div>
-              <div>{remaining_time}</div>
+              <div>{data.deadline}</div>
             </div>
             <div>
               <div className="font-bold rounded-md">
@@ -82,7 +84,7 @@ function CreateInvite() {
                   data-enable-time
                   name="deadline"
                   value={date}
-                  onChange={(e) => setDate(date)}
+                  onChange={(date) => handleDate(JSON.stringify(date))}
                   className="rounded-md px-2 my-2"
                 />
               </div>
