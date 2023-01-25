@@ -4,8 +4,8 @@ import { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Fetcher from "../fetcher/Fetcher";
 import ImageProfile from "./header/ImageProfile";
-
 function CreateInvite() {
   const [date, setDate] = useState(Date.now());
   const initialState = {
@@ -101,7 +101,7 @@ function CreateInvite() {
         theme: "light",
       });
     } else {
-      console.log("sending data", data);
+      Fetcher("/api/invite/", "post", data);
     }
   };
 
