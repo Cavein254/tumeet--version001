@@ -1,12 +1,15 @@
 import "flatpickr/dist/themes/material_green.css";
 import moment from "moment";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Fetcher from "../fetcher/Fetcher";
+import Fetcher from "../utils/Fetcher";
 import ImageProfile from "./header/ImageProfile";
+
 function CreateInvite() {
+  const Router = useRouter();
   const [date, setDate] = useState(Date.now());
   const initialState = {
     title: "",
@@ -16,12 +19,11 @@ function CreateInvite() {
   };
   const [data, setData] = useState(initialState);
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: [e.target.value] });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
   const handleDate = (date) => {
     setDate(date);
     setData({ ...data, deadline: date });
-    console.log(date);
   };
   const laterDate = new Date(JSON.parse(data.deadline)).getTime();
   const now = new Date().getTime();
@@ -102,6 +104,8 @@ function CreateInvite() {
       });
     } else {
       Fetcher("/api/invite/", "post", data);
+      console.log(data);
+      // Router.push("/invitations");
     }
   };
 
