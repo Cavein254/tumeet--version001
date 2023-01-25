@@ -71,7 +71,7 @@ model VerificationToken {
 model Invitation {
   id String @id @default(cuid())
   slug String @unique
-  title String 
+  title String @unique
   description String
   invite_url String
   published        Boolean?           @default(false)
