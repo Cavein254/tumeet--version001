@@ -2,6 +2,8 @@ import "flatpickr/dist/themes/material_green.css";
 import moment from "moment";
 import { useState } from "react";
 import Flatpickr from "react-flatpickr";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ImageProfile from "./header/ImageProfile";
 
 function CreateInvite() {
@@ -9,7 +11,7 @@ function CreateInvite() {
   const initialState = {
     title: "",
     description: "",
-    deadline: '["2023-01-25T19:50:00.000Z"]',
+    deadline: '["1970-01-25T19:50:00.000Z"]',
     inviteUrl: "",
   };
   const [data, setData] = useState(initialState);
@@ -17,21 +19,107 @@ function CreateInvite() {
     setData({ ...data, [e.target.name]: [e.target.value] });
   };
   const handleDate = (date) => {
+    setDate(date);
     setData({ ...data, deadline: date });
+    console.log(date);
   };
-  const laterDate = new Date(JSON.parse(initialState.deadline));
-  const now = Date.now();
+  const laterDate = new Date(JSON.parse(data.deadline)).getTime();
+  console.log("Later Date is of type", typeof laterDate);
+  console.log("Later Date is : ", laterDate);
+  const now = new Date().getTime();
   const remainingTime = laterDate - now;
   let day = moment(remainingTime).day();
   let hour = moment(remainingTime).hour();
   let minute = moment(remainingTime).minute();
   let second = moment(remainingTime).second();
+
+  const isValidURL = (string) => {
+    let url;
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+  };
+
+  const isValidDate = () => {
+    console.log("now is:", now);
+    console.log("laterDate is:", laterDate);
+    if (now <= laterDate) {
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { title, description, inviteUrl, deadline } = data;
+    if (title == "") {
+      toast.error("Please provide a title", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else if (description == "") {
+      toast.error("Please provide a description", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else if (!isValidURL(inviteUrl)) {
+      toast.error("Please a valid Url", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else if (!isValidDate()) {
+      toast.error("Please a valid Date", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
   console.log(remainingTime);
 
   console.log(data);
 
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="mx-12 overflow-hidden">
         <div className="m2 p-2 shadow-2xl border-2 rounded-lg border-b-2 border-emerald-300 hover:shadow-2xl hover:shadow-gray-500 dark:bg-gray-800 dark:hover:shadow-emerald-500">
           <div>
@@ -100,7 +188,9 @@ function CreateInvite() {
                 </div>
                 <div className="mt-2">
                   <button className="btn mx-2 bg-red-500">Cancel</button>
-                  <button className="btn bg-green-600">Create</button>
+                  <button className="btn bg-green-600" onClick={handleSubmit}>
+                    Create
+                  </button>
                 </div>
               </div>
             </div>
