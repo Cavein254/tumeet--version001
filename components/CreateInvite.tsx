@@ -24,8 +24,6 @@ function CreateInvite() {
     console.log(date);
   };
   const laterDate = new Date(JSON.parse(data.deadline)).getTime();
-  console.log("Later Date is of type", typeof laterDate);
-  console.log("Later Date is : ", laterDate);
   const now = new Date().getTime();
   const remainingTime = laterDate - now;
   let day = moment(remainingTime).day();
@@ -44,12 +42,15 @@ function CreateInvite() {
   };
 
   const isValidDate = () => {
-    console.log("now is:", now);
-    console.log("laterDate is:", laterDate);
     if (now <= laterDate) {
-      return false;
+      return true;
     }
-    return true;
+    return false;
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    setData({ ...data, title: "", description: "", inviteUrl: "" });
   };
 
   const handleSubmit = (e) => {
@@ -99,12 +100,10 @@ function CreateInvite() {
         progress: undefined,
         theme: "light",
       });
+    } else {
+      console.log("sending data", data);
     }
   };
-
-  console.log(remainingTime);
-
-  console.log(data);
 
   return (
     <div>
@@ -187,7 +186,12 @@ function CreateInvite() {
                   />
                 </div>
                 <div className="mt-2">
-                  <button className="btn mx-2 bg-red-500">Cancel</button>
+                  <button
+                    className="btn mx-2 bg-red-500"
+                    onClick={handleCancel}
+                  >
+                    Cancel
+                  </button>
                   <button className="btn bg-green-600" onClick={handleSubmit}>
                     Create
                   </button>
