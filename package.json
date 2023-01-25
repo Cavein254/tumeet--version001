@@ -26,6 +26,7 @@
     "react-dom": "^18.2.0",
     "react-flatpickr": "^3.10.13",
     "react-icons": "^4.6.0",
+    "react-toastify": "^9.1.1",
     "reacticons": "^0.0.1"
   },
   "devDependencies": {
