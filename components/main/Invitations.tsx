@@ -1,17 +1,12 @@
 import Invitation from "./Invitation";
 
-function Invitations() {
+function Invitations({ invites }) {
+  console.log("**********");
+  console.log(invites);
+  console.log("**********");
   return (
     <div className="flex flex-row md:flex-row mx-auto px-auto flex-wrap justify-around">
-      <Invitation />
-      <Invitation />
-      <Invitation />
-      <Invitation />
-      <Invitation />
-      <Invitation />
-      <Invitation />
-      <Invitation />
-      <Invitation />
+      <Invitation invites={invites} />
     </div>
   );
 }

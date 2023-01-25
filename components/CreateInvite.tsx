@@ -104,7 +104,6 @@ function CreateInvite() {
       });
     } else {
       Fetcher("/api/invite/", "post", data);
-      console.log(data);
       // Router.push("/invitations");
     }
   };
