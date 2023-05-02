@@ -2,7 +2,7 @@ import ImageProfile from "../header/ImageProfile";
 
 function Invitation() {
   return (
-    <div className="m-2 p-2 shadow-lg rounded-lg border-b-2 border-emerald-300 md:w-2/6 hover:shadow-2xl hover:shadow-gray-500 dark:bg-gray-800 dark:hover:shadow-emerald-500">
+    <div className="m-2 p-2 shadow-lg rounded-lg border-b-2 border-emerald-300 hover:shadow-2xl hover:shadow-gray-500 dark:bg-gray-800 dark:hover:shadow-emerald-500">
       <div>
         <div className="flex flex-row justify-between p-2 border-b-2 border-gray-300 items-center">
           <div>
