@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { BsArrowBarDown } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
 import ImageProfile from "../header/ImageProfile";
+
 function Profile() {
+  const [readMe, setReadMe] = useState(false);
   return (
     <div>
       <div className="bg-scroll bg-my_bg_image h-36 my-clip-path"></div>
@@ -53,7 +56,7 @@ function Profile() {
                   qui dolorum aperiam soluta provident. Ut.
                 </p>
 
-                <div className="flex flex-row items-center text-lg font-bold">
+                <div className="flex flex-row items-center text-lg font-bold hover:text-blue-700">
                   <div>
                     <h6>Read More </h6>
                   </div>

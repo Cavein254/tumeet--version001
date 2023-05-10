@@ -7,6 +7,19 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+export async function getServerSideProps (){
+  const data = await prisma?.invitation.findMany();
+  // const invites = JSON.parse(JSON.stringify(data));
+  const invites = data;
+  console.log("object");
+  console.log(invites);
+  return {
+    props: invites,
+  }
+}
+
+
 //TODO: Fix scrollbars
 //TODO: Add container to overall layout
 //TODO: Add get all invites to main page
