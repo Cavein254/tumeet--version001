@@ -3,6 +3,7 @@ import ImageProfile from "../header/ImageProfile";
 function Invitation({data}) {
   const {title, description, createdAt, updatedAt, deadline} = data;
   const remainingTime = deadline - updatedAt;
+  console.log(remainingTime);
   return (
     <div className="m-2 p-2 shadow-lg rounded-lg border-b-2 border-emerald-300 hover:shadow-2xl hover:shadow-gray-500 dark:bg-gray-800 dark:hover:shadow-emerald-500">
       <div>
@@ -35,7 +36,7 @@ function Invitation({data}) {
             <div className="text-xs font-extralight">Applicants</div>
           </div>
           <div>
-            <div className="text-sm">{remainingTime}</div>
+            <div className="text-sm">{remainingTime.toLocaleString()}</div>
             <div className="text-xs font-extralight">Created 12 {createdAt}</div>
           </div>
         </div>
