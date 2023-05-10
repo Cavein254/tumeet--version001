@@ -1,6 +1,8 @@
 import ImageProfile from "../header/ImageProfile";
 
-function Invitation() {
+function Invitation({data}) {
+  const {title, description, createdAt, updatedAt, deadline} = data;
+  const remainingTime = deadline - updatedAt;
   return (
     <div className="m-2 p-2 shadow-lg rounded-lg border-b-2 border-emerald-300 hover:shadow-2xl hover:shadow-gray-500 dark:bg-gray-800 dark:hover:shadow-emerald-500">
       <div>
@@ -19,15 +21,12 @@ function Invitation() {
         </div>
         <div>
           <h1 className="font-bold text-lg leading-4 pt-2 px-2">
-            Lorem ipsum dolor, sit amet con. Lorem ipsum dolor, sit amet con
+            {title}
           </h1>
         </div>
         <div className="font-light text-sm pt-2 border-b-2 border-gray-300 px-2">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-            libero perspiciatis! Quis sit molestias nemo ipsam? Quis quidem
-            voluptas reprehenderit deserunt ex qui, labore ducimus accusantium,
-            explicabo unde nemo fuga.
+            {description}
           </p>
         </div>
         <div className="flex flex-row justify-between items-center px-2">
@@ -36,8 +35,8 @@ function Invitation() {
             <div className="text-xs font-extralight">Applicants</div>
           </div>
           <div>
-            <div className="text-sm">30 min Remaining</div>
-            <div className="text-xs font-extralight">Created 12 hours ago</div>
+            <div className="text-sm">{remainingTime}</div>
+            <div className="text-xs font-extralight">Created 12 {createdAt}</div>
           </div>
         </div>
       </div>
