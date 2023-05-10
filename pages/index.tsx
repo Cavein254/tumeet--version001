@@ -20,7 +20,6 @@ export async function getServerSideProps (){
 
 //TODO: Fix scrollbars
 //TODO: Add container to overall layout
-//TODO: Add get all invites to main page
 //TODO: Add protected route to
   // 1. My Invites
   // 2. Drafts
