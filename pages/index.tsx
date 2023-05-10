@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import Invitation from "../components/main/Invitation";
+import prisma from '../lib/prismadb';
 
 export default function IndexPage({invites}) {
   const all_invites = invites.map(

@@ -1,39 +1,19 @@
-import { useSession } from "next-auth/react"
-import { useEffect, useState } from "react"
-import AccessDenied from "../components/access-denied"
-import Invite from "../components/invites/Invite"
 import Layout from "../components/layout"
 
-export default function ProtectedPage() {
-  const { data: session } = useSession()
-  const [content, setContent] = useState()
-
-  // Fetch content from protected route
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/examples/protected")
-      const json = await res.json()
-      if (json.content) {
-        setContent(json.content)
-      }
-    }
-    fetchData()
-  }, [session])
- 
-
-  // If no session exists, display access denied message
-  if (!session) {
-    return (
-      <Layout>
-        <AccessDenied />
-      </Layout>
-    )
-  }
-
-  // If session exists, display content
+function createInvite() {
   return (
     <Layout>
-      <Invite />
+     <main className="flex justify-center items-center container m-4 p-3 shadow-xl bg-gray-100 rounded-lg dark:hover:shadow-2xl dark:hover:shadow-green-300">
+      <form className="flex justify-center flex-col">
+        <h1 className="text-center font-extrabold text-2xl dark:text-green-600 ">Enter Invitation Details</h1>
+        <div className="w-[90%]">
+          <input placeholder="Title of the Invite" className="w-[110%]  text-4xl px-2 rounded-md text-gray-600 "/>
+          <textarea rows={6} placeholder="Description of the Invite" className="w-[110%]  text-md px-2 rounded-md text-gray-400 mt-2"/>
+        </div>
+      </form>
+     </main>
     </Layout>
   )
 }
+
+export default createInvite
