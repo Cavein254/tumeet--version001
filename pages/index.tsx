@@ -29,7 +29,6 @@ export async function getServerSideProps (){
   // 3. api getway
 //TODO: Fix onclick picture icon appearance
 //TODO: Create Links to routes
-//TODO: Fix Darkmode on profile not working as expected
 //TODO: Add working onclick links to website on profile
 //TODO: Add github 
 //TODO: Add mailto functionality to email
