@@ -47,7 +47,7 @@ function Profile() {
                   development.{" "}
                 </h4>
               </div>
-              <div className="mt-2 border-2 border-b-gray-200  border-blue-50">
+              <div className="mt-2 border-2 border-b-gray-200  border-blue-50 ">
                 <h3 className="text-lg font-bold dark:text-blue-700">About Me</h3>
                 <p className="dark:text-blue-700">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -69,7 +69,7 @@ function Profile() {
               </div>
             </div>
             {/* Another padding  */}
-            <div className="md:w-1/2 p-2 bg-blue-50 rounded-md">
+            <div className="md:w-1/2 p-2 bg-blue-50 rounded-md ">
               <div className="border-2 border-b-gray-200  border-blue-50">
                 <div className="border-2 border-b-gray-200  border-blue-50 pb-4">
                   <h3 className="text-lg font-semibold dark:text-blue-800">Skills</h3>
