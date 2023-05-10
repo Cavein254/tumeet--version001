@@ -7,7 +7,6 @@ import ThemeToggler from "../components/header/ThemeToggler";
 import Profile from "./header/Profile";
 function Header1() {
   const { data: session, status } = useSession();
-  console.log(session);
 
   const [showDrop, setShowDrop] = useState(false);
   const handleShowDrop = () => {

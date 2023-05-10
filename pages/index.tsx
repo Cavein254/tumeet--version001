@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 
-export default function IndexPage() {
+export default function IndexPage({invites}) {
+  console.log(invites);
   return (
     <Layout>
       <h1>NextAuth.js Example</h1>
@@ -10,12 +11,9 @@ export default function IndexPage() {
 
 export async function getServerSideProps (){
   const data = await prisma?.invitation.findMany();
-  // const invites = JSON.parse(JSON.stringify(data));
-  const invites = data;
-  console.log("object");
-  console.log(invites);
+  const invites = JSON.parse(JSON.stringify(data));
   return {
-    props: invites,
+    props: {invites},
   }
 }
 
