@@ -41,14 +41,14 @@ function Profile() {
           <div className="md:flex md:flex-row justify-between p-2 ">
             <div className="md:w-1/2 md:mr-4 bg-blue-50 p-2 rounded-md">
               <div className="border-b-gray-200 border-2 border-blue-50">
-                <h2 className="text-lg font-bold dark:text-blue-700 ">Experience</h2>
+                <h2 className="text-lg font-bold dark:text-blue-700 ">About Me</h2>
                 <h4 className="dark:text-blue-700">
-                  I special in UX/UI design, brand strategy, and webflow
+                  I specialize in UX/UI design, brand strategy, and webflow
                   development.{" "}
                 </h4>
               </div>
               <div className="mt-2 border-2 border-b-gray-200  border-blue-50 ">
-                <h3 className="text-lg font-bold dark:text-blue-700">About Me</h3>
+                <h3 className="text-lg font-bold dark:text-blue-700">Experience</h3>
                 <p className="dark:text-blue-700">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Neque ab repellendus aspernatur vero, iusto quasi, est
