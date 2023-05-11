@@ -24,9 +24,6 @@ function Header1() {
             <ul className="flex flex-row justify-evenly invisible md:visible">
               <li><Link href='/create-profile'>Create Profile</Link></li>
               <li><Link href='/create-invite'>Create Invite</Link></li>
-              <li>Premium</li>
-              <li>Tools</li>
-              <li>Custom Development</li>
             </ul>
           </nav>
           <div className="flex flex-wrap">
