@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-export default async function handler (url,data,req:NextApiRequest, res:NextApiResponse) {
+export async function fetcher (url,data,req:NextApiRequest, res:NextApiResponse) {
     try {
         await fetch(url,{
             method: data ? "POST" : "GET",
@@ -21,4 +21,12 @@ export default async function handler (url,data,req:NextApiRequest, res:NextApiR
             payload:req.body
         })
     }
+}
+
+export const slugGenerator = title => {
+    const newTitle = title.replaceAll(" ","-");
+    const newDay = new Date();
+    const slug = 
+    newTitle + "-" + newDay.getFullYear() + "-" + newDay.getMonth() + "-" + newDay.getUTCDay() + "-" + newDay.getHours() + "-" + newDay.getMinutes() + "-" + newDay.getMilliseconds();
+    return slug;
 }
