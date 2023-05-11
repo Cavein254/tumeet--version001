@@ -16,7 +16,9 @@ function Header1() {
     <div className="max-w-screen h-24 min-w-min">
       <div className=" flex-wrap max-w-screen dark:bg-gray-700 dark:text-white py-4  gray-400 shadow-xl border-b-4 border-emerald-500 px-4">
         <div className="flex flex-row justify-evenly items-center">
-          <div>Tailwind Components</div>
+          <div>
+            <span className="text-5xl font-extrabold text-green-600">TU</span><span className="italic font-extralight text-3xl dark:text-white">meet</span>
+          </div>
           <div className=" flex-grow">
             <div className="flex flex-row justify-evenly invisible md:visible">
               <h4>Component</h4>
