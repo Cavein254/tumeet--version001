@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaLock } from "react-icons/fa";
 import ThemeToggler from "../components/header/ThemeToggler";
 
+import Link from "next/link";
 import Profile from "./header/Profile";
 function Header1() {
   const { data: session, status } = useSession();
@@ -19,14 +20,15 @@ function Header1() {
           <div>
             <span className="text-5xl font-extrabold text-green-600">TU</span><span className="italic font-extralight text-3xl dark:text-white">meet</span>
           </div>
-          <div className=" flex-grow">
-            <div className="flex flex-row justify-evenly invisible md:visible">
-              <h4>Component</h4>
-              <h4>Premium</h4>
-              <h4>Tools</h4>
-              <h4>Custom Development</h4>
-            </div>
-          </div>
+          <nav className=" flex-grow">
+            <ul className="flex flex-row justify-evenly invisible md:visible">
+              <li><Link href='/create-profile'>Create Profile</Link></li>
+              <li><Link href='/create-invite'>Create Invite</Link></li>
+              <li>Premium</li>
+              <li>Tools</li>
+              <li>Custom Development</li>
+            </ul>
+          </nav>
           <div className="flex flex-wrap">
             <div>
               <ThemeToggler />
