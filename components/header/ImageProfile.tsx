@@ -7,7 +7,7 @@ const LilProfile = ({ height, width, classname }) => {
     <div>
       <Image
         className={classname ? classname : "rounded-full"}
-        src={`${session?.user?.image}`}
+        src={session?.user?.image}
         height={height ? height : 50}
         width={width ? width : 50}
         alt={session?.user?.name}
