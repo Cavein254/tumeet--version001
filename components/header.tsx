@@ -48,8 +48,7 @@ function Header1() {
               <button onClick={handleShowDrop}>
                 <Image
                   className="rounded-full"
-                  // src={session?.user?.image}
-                  src = ""
+                  src={`${session?.user?.image}`}
                   height={50}
                   width={50}
                 />
